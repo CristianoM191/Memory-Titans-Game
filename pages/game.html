@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teen Titans Memory Game | Jogo</title>
+
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="./css/game.css">
+
+  <script defer src="../js/global.js"></script>
+  <script defer src="./js/game.js"></script>
+</head>
+<body>
+  <audio id="bg-audio" loop preload="auto">
+    <source src="../audio/soundtrack.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <button
+    class="menu-toggle"
+    id="menuToggle"
+    type="button"
+    aria-label="Abrir menu lateral"
+    aria-expanded="false"
+    aria-controls="sideMenu"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <aside class="side-menu" id="sideMenu" aria-hidden="true">
+    <div class="side-menu__header">
+      <h2>Menu</h2>
+      <button class="side-menu__close" id="menuClose" type="button" aria-label="Fechar menu">×</button>
+    </div>
+
+    <nav class="side-menu__content">
+      <button class="menu-item" id="toggleAudioBtn" type="button">
+        <span class="menu-item__label">Música</span>
+        <span class="menu-item__value" id="audioStatus">Ligada</span>
+      </button>
+
+      <button class="menu-item" id="toggleThemeBtn" type="button">
+        <span class="menu-item__label">Tema</span>
+        <span class="menu-item__value" id="themeStatus">Escuro</span>
+      </button>
+
+      <button class="menu-item" id="toggleSpeechBtn" type="button">
+        <span class="menu-item__label">Suporte de áudio</span>
+        <span class="menu-item__value" id="speechStatus">Desativado</span>
+      </button>
+
+      <a class="menu-item menu-item--link" href="../index.html">
+        <span class="menu-item__label">Voltar ao início</span>
+        <span class="menu-item__value">↺</span>
+      </a>
+    </nav>
+  </aside>
+
+  <main class="game-page">
+    <div class="game-background"></div>
+
+    <section class="game-shell">
+      <header class="game-hud">
+        <div class="hud-side hud-side--left">
+          <article class="player-panel" id="playerOnePanel">
+            <div class="player-panel__top">
+              <span class="player-panel__tag" id="playerOneTag">Jogador 1</span>
+              <span class="player-panel__turn-badge" id="playerOneTurnBadge">Sua vez</span>
+            </div>
+
+            <div class="player-panel__name-row">
+              <h2 class="player-panel__name" id="playerOneName">Herói 1</h2>
+            </div>
+
+            <div class="player-panel__underline" aria-hidden="true"></div>
+
+            <p class="player-panel__score">
+              Pontos: <span id="playerOneScore">0</span>
+            </p>
+          </article>
+
+          <article class="player-panel player-panel--ghost" id="playerTwoPanel">
+            <div class="player-panel__top">
+              <span class="player-panel__tag" id="playerTwoTag">Jogador 2</span>
+              <span class="player-panel__turn-badge" id="playerTwoTurnBadge">Sua vez</span>
+            </div>
+
+            <div class="player-panel__name-row">
+              <h2 class="player-panel__name" id="playerTwoName">Herói 2</h2>
+            </div>
+
+            <div class="player-panel__underline" aria-hidden="true"></div>
+
+            <p class="player-panel__score">
+              Pontos: <span id="playerTwoScore">0</span>
+            </p>
+          </article>
+        </div>
+
+        <div class="hud-side hud-side--right">
+          <article class="info-chip info-chip--timer">
+            <span class="info-chip__label">Tempo</span>
+            <strong class="info-chip__value" id="timer">00:00</strong>
+          </article>
+
+          <button class="info-chip info-chip--restart" id="restartGameBtn" type="button">
+            <span class="info-chip__label">Partida</span>
+            <strong class="info-chip__value">Reiniciar</strong>
+          </button>
+        </div>
+      </header>
+
+      <section class="game-board-section">
+        <div class="grid" id="gameGrid" aria-label="Tabuleiro do jogo da memória"></div>
+      </section>
+    </section>
+
+    <section class="result-overlay hidden" id="resultOverlay" aria-hidden="true">
+      <div class="result-backdrop"></div>
+
+      <article class="result-card" id="resultCard">
+        <p class="result-card__eyebrow">Resultado da missão</p>
+
+        <h2 class="result-card__title" id="resultTitle">Parabéns, Herói!</h2>
+
+        <div class="result-card__highlight" id="resultHighlight">
+          Missão concluída em <strong id="resultTime">00:00</strong>
+        </div>
+
+        <div class="result-card__details" id="resultDetails"></div>
+
+        <div class="result-card__actions">
+          <button class="result-btn result-btn--primary" id="playAgainBtn" type="button">
+            Jogar novamente
+          </button>
+
+          <a class="result-btn result-btn--secondary" href="../index.html">
+            Voltar ao início
+          </a>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

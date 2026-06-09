@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teen Titans Memory Game | Login 1v1</title>
+
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="./css/login.css">
+
+  <script defer src="../js/global.js"></script>
+  <script defer src="./js/login.js"></script>
+</head>
+<body data-login-mode="duo">
+  <audio id="bg-audio" loop preload="auto">
+    <!-- ⚠️ SUBSTITUA pelo seu arquivo real -->
+    <source src="../audio/soundtrack.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <button
+    class="menu-toggle"
+    id="menuToggle"
+    type="button"
+    aria-label="Abrir menu lateral"
+    aria-expanded="false"
+    aria-controls="sideMenu"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <aside class="side-menu" id="sideMenu" aria-hidden="true">
+    <div class="side-menu__header">
+      <h2>Menu</h2>
+      <button class="side-menu__close" id="menuClose" type="button" aria-label="Fechar menu">×</button>
+    </div>
+
+    <nav class="side-menu__content">
+      <button class="menu-item" id="toggleAudioBtn" type="button">
+        <span class="menu-item__label">Música</span>
+        <span class="menu-item__value" id="audioStatus">Ligada</span>
+      </button>
+
+      <button class="menu-item" id="toggleThemeBtn" type="button">
+        <span class="menu-item__label">Tema</span>
+        <span class="menu-item__value" id="themeStatus">Escuro</span>
+      </button>
+
+      <button class="menu-item" id="toggleSpeechBtn" type="button">
+        <span class="menu-item__label">Suporte de áudio</span>
+        <span class="menu-item__value" id="speechStatus">Desativado</span>
+      </button>
+
+      <a class="menu-item menu-item--link" href="../index.html">
+        <span class="menu-item__label">Voltar ao início</span>
+        <span class="menu-item__value">↺</span>
+      </a>
+    </nav>
+  </aside>
+
+  <div class="stripe-transition" id="stripeTransition" aria-hidden="true">
+    <span class="stripe stripe--red"></span>
+    <span class="stripe stripe--yellow"></span>
+    <span class="stripe stripe--green"></span>
+    <span class="stripe stripe--blue"></span>
+    <span class="stripe stripe--purple"></span>
+  </div>
+
+  <main class="login-page">
+    <section class="login-shell" id="loginShell">
+      <div class="login-visual login-visual--duo" id="loginVisual">
+        <!-- ⚠️ Esta é a imagem complementar que você vai usar -->
+        <img
+          src="../images/Tt2.png"
+          alt="Equipe dos Jovens Titãs em pose de combate"
+          class="login-visual__image"
+        >
+      </div>
+
+      <section class="login-card" id="loginCard">
+        <div class="login-card__header login-fall-item">
+          <p class="login-card__eyebrow">Modo 1v1</p>
+          <h1 class="login-card__title">Dois entram, um sai</h1>
+          <p class="login-card__subtitle">
+            Defina os nomes dos competidores e descubra quem domina a memória.
+          </p>
+        </div>
+
+        <form class="login-form" id="loginForm" novalidate>
+          <div class="form-field login-fall-item">
+            <label for="playerOne">Nome do herói 1</label>
+            <input
+              type="text"
+              id="playerOne"
+              name="playerOne"
+              placeholder="Digite o nome do herói 1"
+              maxlength="18"
+              autocomplete="nickname"
+              required
+            >
+          </div>
+
+          <div class="form-field login-fall-item">
+            <label for="playerTwo">Nome do herói 2</label>
+            <input
+              type="text"
+              id="playerTwo"
+              name="playerTwo"
+              placeholder="Digite o nome do herói 2"
+              maxlength="18"
+              autocomplete="nickname"
+              required
+            >
+            <small class="field-message" id="duoFieldMessage"></small>
+          </div>
+
+          <button class="login-submit login-fall-item" id="loginSubmit" type="submit" disabled>
+            Iniciar missão
+          </button>
+        </form>
+      </section>
+    </section>
+  </main>
+</body>
+</html>

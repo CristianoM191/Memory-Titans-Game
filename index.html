@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+
+
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0f172a">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teen Titans Memory Game</title>
+
+  <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./pages/css/index.css">
+
+  <script defer src="./js/global.js"></script>
+  <script defer src="./pages/js/index.js"></script>
+</head>
+<body>
+  <!-- Áudio global -->
+  <audio id="bg-audio" loop preload="auto">
+    <source src="./audio/soundtrack.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <!-- Botão que abre o menu lateral -->
+  <button
+    class="menu-toggle"
+    id="menuToggle"
+    type="button"
+    aria-label="Abrir menu lateral"
+    aria-expanded="false"
+    aria-controls="sideMenu"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Overlay do menu -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <!-- Menu lateral global -->
+  <aside class="side-menu" id="sideMenu" aria-hidden="true">
+    <div class="side-menu__header">
+      <h2>Menu</h2>
+      <button class="side-menu__close" id="menuClose" type="button" aria-label="Fechar menu">×</button>
+    </div>
+
+    <nav class="side-menu__content">
+      <button class="menu-item" id="toggleAudioBtn" type="button">
+        <span class="menu-item__label">Música</span>
+        <span class="menu-item__value" id="audioStatus">Ligada</span>
+      </button>
+
+      <button class="menu-item" id="toggleThemeBtn" type="button">
+        <span class="menu-item__label">Tema</span>
+        <span class="menu-item__value" id="themeStatus">Escuro</span>
+      </button>
+
+      <button class="menu-item" id="toggleSpeechBtn" type="button">
+        <span class="menu-item__label">Suporte de áudio</span>
+        <span class="menu-item__value" id="speechStatus">Desativado</span>
+      </button>
+
+      <a class="menu-item menu-item--link" href="./index.html">
+        <span class="menu-item__label">Voltar ao início</span>
+        <span class="menu-item__value">↺</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Transição de listras -->
+  <div class="stripe-transition" id="stripeTransition" aria-hidden="true">
+    <span class="stripe stripe--red"></span>
+    <span class="stripe stripe--yellow"></span>
+    <span class="stripe stripe--green"></span>
+    <span class="stripe stripe--blue"></span>
+    <span class="stripe stripe--purple"></span>
+  </div>
+
+  <main class="mode-page">
+    <section class="hero">
+      <div class="hero__badge">
+        <img src="./images/logo.png" alt="Logo decorativo do jogo" class="hero__logo">
+      </div>
+
+      <div class="hero__title-wrap">
+        <h1 class="hero__title">
+          <span class="hero__title-main">Teen Titans</span>
+          <span class="hero__title-sub">Memory Game</span>
+        </h1>
+        <p class="hero__subtitle">Escolha seu modo de jogo</p>
+      </div>
+    </section>
+
+    <section class="mode-selector" aria-label="Escolha do modo de jogo">
+      <button class="mode-card mode-card--solo" type="button" data-mode="solo">
+        <span class="mode-card__glow"></span>
+        <span class="mode-card__label">Modo Solo</span>
+        <span class="mode-card__description">
+          Jogue sozinho e tente concluir o jogo no menor tempo possível.
+        </span>
+      </button>
+
+      <button class="mode-card mode-card--duo" type="button" data-mode="duo">
+        <span class="mode-card__glow"></span>
+        <span class="mode-card__label">Modo 1v1</span>
+        <span class="mode-card__description">
+          Dispute com outro jogador, marque pontos e descubra quem vence.
+        </span>
+      </button>
+    </section>
+  </main>
+</body>
+</html>
