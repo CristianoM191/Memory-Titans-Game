@@ -307,7 +307,7 @@ html[data-theme="light"] .game-background {
   background-color: #b8131c;
   background-image:
     linear-gradient(135deg, rgba(255,255,255,0.08), transparent 45%),
-    url("/images/card-back.jpg.jpeg");
+   url("../../images/card-back.jpg.jpeg");
   background-size: cover;
   background-position: center;
 }
