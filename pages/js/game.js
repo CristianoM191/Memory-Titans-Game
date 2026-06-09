@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const cardsData = [
-    { id: 'robin', label: 'Robin', image: '../images/cards/robin.png' },
+    { id: 'robin', label: 'Robin', image: '../images/cards/Robin.png' },
     { id: 'starfire', label: 'Estelar', image: '../images/cards/starfire.png' },
     { id: 'raven', label: 'Ravena', image: '../images/cards/raven.png' },
     { id: 'cyborg', label: 'Cyborg', image: '../images/cards/cyborg.png' },

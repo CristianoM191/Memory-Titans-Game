@@ -9,7 +9,7 @@ const FILES_TO_CACHE = [
   "./js/global.js",
 
   "./images/logo.png",
-  "./images/card-back.png",
+  "",
   "./images/bg-game.jpg",
 
   "./audio/soundtrack.mp3",

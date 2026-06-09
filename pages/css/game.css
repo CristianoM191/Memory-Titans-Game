@@ -11,7 +11,7 @@
   z-index: 0;
   background:
     linear-gradient(135deg, rgba(4, 7, 12, 0.72), rgba(7, 11, 18, 0.78)),
-    url("/images/bg-game.jpg") center/cover no-repeat;
+    url("../../images/bg-game.jpg") center/cover no-repeat;
 }
 
 
@@ -19,7 +19,7 @@
 html[data-theme="light"] .game-background {
   background:
     linear-gradient(135deg, rgba(230, 237, 246, 0.58), rgba(206, 219, 233, 0.64)),
-    url("/images/bg-game.jpg") center/cover no-repeat;
+    url("../../images/bg-game.jpg") center/cover no-repeat;
 }
 
 .game-background::after {
