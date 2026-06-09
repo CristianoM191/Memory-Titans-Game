@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
-      .register("./service-worker.js")
+      .register("/Memory-Titans-Game/service-worker.js")
       .then(() => {
         console.log("Service Worker registrado com sucesso!");
       })
